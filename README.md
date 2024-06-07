@@ -25,8 +25,14 @@ if err != nil {
 }
 defer confSubs.Unsubscribe()
 
+// get the current value
 config := confSubs.Get()
 log.Printf("Get Config: %+v", config)
+
+// subscribe to the values stream
+for val := range confSubs.GetUpdates() {
+    log.Printf("Config: %+v", val)
+}
 
 ```
 
