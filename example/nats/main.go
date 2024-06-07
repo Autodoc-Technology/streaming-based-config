@@ -37,10 +37,10 @@ func main() {
 		log.Fatalf("Failed to create JetStream: %v", err)
 	}
 
-	// Run following console command to initialize NATS KV value
+	// Run the following console command to initialize the NATS KV value
 	// `nats kv put deb_sbc_example main.Config_string_ '{"key1":"val1.1","key2":"val2.1", "key":"type-parameter-value.1"}'`
 	kv, err := js.CreateOrUpdateKeyValue(ctx, jetstream.KeyValueConfig{
-		Bucket: "deb_sbc_example",
+		Bucket: "dev_sbc_example",
 	})
 	if err != nil {
 		log.Fatalf("Failed to create KeyValue: %v", err)
