@@ -1,8 +1,9 @@
 package sbckey_test
 
 import (
-	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
 	"testing"
+
+	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
 )
 
 func TestConsulDefaultKeyBuilderWithInt(t *testing.T) {

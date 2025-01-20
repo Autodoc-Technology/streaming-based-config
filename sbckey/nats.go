@@ -2,8 +2,9 @@ package sbckey
 
 import (
 	"fmt"
-	sbc "github.com/Autodoc-Technology/streaming-based-config"
 	"regexp"
+
+	sbc "github.com/Autodoc-Technology/streaming-based-config"
 )
 
 var (

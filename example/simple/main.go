@@ -2,14 +2,15 @@ package main
 
 import (
 	"context"
-	sbc "github.com/Autodoc-Technology/streaming-based-config"
-	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
-	"github.com/Autodoc-Technology/streaming-based-config/sbctransport"
 	"log"
 	"os"
 	"os/signal"
 	"sync"
 	"time"
+
+	sbc "github.com/Autodoc-Technology/streaming-based-config"
+	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
+	"github.com/Autodoc-Technology/streaming-based-config/sbctransport"
 )
 
 type SimpleConfig struct {
