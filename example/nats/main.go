@@ -2,15 +2,16 @@ package main
 
 import (
 	"context"
+	"log"
+	"os"
+	"os/signal"
+	"sync"
+
 	sbc "github.com/Autodoc-Technology/streaming-based-config"
 	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
 	"github.com/Autodoc-Technology/streaming-based-config/sbctransport"
 	"github.com/nats-io/nats.go"
 	"github.com/nats-io/nats.go/jetstream"
-	"log"
-	"os"
-	"os/signal"
-	"sync"
 )
 
 // Config is a struct that contains two string fields and a generic field.

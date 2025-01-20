@@ -2,9 +2,10 @@ package sbckey_test
 
 import (
 	"fmt"
+	"testing"
+
 	sbc "github.com/Autodoc-Technology/streaming-based-config"
 	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
-	"testing"
 )
 
 func TestKeyBuilderFuncWithInt(t *testing.T) {

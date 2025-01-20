@@ -1,8 +1,9 @@
 package sbcencoder_test
 
 import (
-	"github.com/Autodoc-Technology/streaming-based-config/sbcencoder"
 	"testing"
+
+	"github.com/Autodoc-Technology/streaming-based-config/sbcencoder"
 )
 
 func TestJsonEncoderEncodeValidData(t *testing.T) {

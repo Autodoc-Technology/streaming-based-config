@@ -2,8 +2,9 @@ package sbckey
 
 import (
 	"fmt"
-	sbc "github.com/Autodoc-Technology/streaming-based-config"
 	"strings"
+
+	sbc "github.com/Autodoc-Technology/streaming-based-config"
 )
 
 // ConsulDefaultKeyBuilder is a function that returns a key builder for Consul.

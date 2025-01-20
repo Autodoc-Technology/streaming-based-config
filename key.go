@@ -3,6 +3,8 @@ package sbc
 // KeyBuilder is an interface that defines a method to build a key based on a value of type T.
 // The BuildKey method takes a value of type T as a parameter and returns a string key.
 type KeyBuilder[T comparable] interface {
+
+	// BuildKey generates a string key based on the provided parameter of type T.
 	BuildKey(t T) string
 }
 

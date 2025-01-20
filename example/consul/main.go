@@ -2,15 +2,16 @@ package main
 
 import (
 	"context"
-	sbc "github.com/Autodoc-Technology/streaming-based-config"
-	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
-	"github.com/Autodoc-Technology/streaming-based-config/sbctransport"
-	capi "github.com/hashicorp/consul/api"
 	"log"
 	"os"
 	"os/signal"
 	"sync"
 	"time"
+
+	sbc "github.com/Autodoc-Technology/streaming-based-config"
+	"github.com/Autodoc-Technology/streaming-based-config/sbckey"
+	"github.com/Autodoc-Technology/streaming-based-config/sbctransport"
+	capi "github.com/hashicorp/consul/api"
 )
 
 // Config is a struct that contains two string fields and a generic field.
@@ -36,7 +37,10 @@ func main() {
 	kv := client.KV()
 
 	sub := sbc.NewSubscriber[Config[string]](
-		sbctransport.NewConsulTransport(kv, sbctransport.WithUpdateInterval(3*time.Second)),
+		sbctransport.NewConsulTransport(kv,
+			sbctransport.WithUpdateInterval(3*time.Second),
+			sbctransport.WithUpdateJitter(1*time.Second),
+		),
 		sbckey.ConsulDefaultKeyBuilder[Config[string]](),
 	)
 	confSubs, err := sub.Subscribe(ctx)
