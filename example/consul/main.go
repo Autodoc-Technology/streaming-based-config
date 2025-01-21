@@ -41,7 +41,7 @@ func main() {
 			sbctransport.WithUpdateInterval(3*time.Second),
 			sbctransport.WithUpdateJitter(1*time.Second),
 		),
-		sbckey.ConsulDefaultKeyBuilder[Config[string]](),
+		sbckey.ConsulDefaultKeyBuilder[Config[string]](sbckey.NoPrefix),
 	)
 	confSubs, err := sub.Subscribe(ctx)
 	if err != nil {
