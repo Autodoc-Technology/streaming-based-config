@@ -14,8 +14,9 @@ import (
 )
 
 type SimpleConfig struct {
-	Value1 int    `json:"value"`
-	Value2 string `json:"value2"`
+	Value1     int      `json:"value"`
+	Value2     string   `json:"value2"`
+	SliceValue []string `json:"slice_value"`
 }
 
 func main() {
@@ -23,7 +24,7 @@ func main() {
 	defer stop()
 
 	sub := sbc.NewSubscriber[SimpleConfig](
-		sbctransport.NewDemoTransport([]byte(`{"value": 1, "value2": "hello"}`), 3*time.Second),
+		sbctransport.NewDemoTransport([]byte(`{"value": 1, "value2": "hello", "slice_value": ["first", "second"]}`), 3*time.Second),
 		sbckey.DefaultKeyBuilder[SimpleConfig](),
 	)
 	confSubs, err := sub.Subscribe(ctx)

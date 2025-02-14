@@ -14,7 +14,7 @@ import (
 // The subscription is started by calling the start() method of the subscription instance.
 //
 // Use the Unsubscribe() method to stop the subscription by calling the stop() method of the subscription instance.
-type Subscriber[T comparable] struct {
+type Subscriber[T any] struct {
 	transport    Transport
 	subscription *Subscription[T]
 	keyBuilder   KeyBuilder[T]
@@ -22,7 +22,7 @@ type Subscriber[T comparable] struct {
 }
 
 // NewSubscriber creates a new subscriber
-func NewSubscriber[T comparable](transport Transport, kb KeyBuilder[T], opts ...SubscriberOpt) *Subscriber[T] {
+func NewSubscriber[T any](transport Transport, kb KeyBuilder[T], opts ...SubscriberOpt) *Subscriber[T] {
 	return &Subscriber[T]{
 		transport:  transport,
 		keyBuilder: kb,
