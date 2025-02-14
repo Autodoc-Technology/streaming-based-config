@@ -6,14 +6,14 @@ import (
 )
 
 // Holder represents a synchronized container that holds a value of any type.
-type Holder[T comparable] struct {
+type Holder[T any] struct {
 	mu    sync.RWMutex
 	cond  *sync.Cond
 	value T
 }
 
 // NewHolder creates a new envelope with the given value
-func NewHolder[T comparable](value T) *Holder[T] {
+func NewHolder[T any](value T) *Holder[T] {
 	h := &Holder[T]{value: value}
 	h.cond = sync.NewCond(&h.mu)
 	return h

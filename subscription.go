@@ -19,7 +19,7 @@ import (
 // Use the getAndDecode() method to get and decode the initial value from the transport.
 //
 // Use the decode() method to decode the byte slice into type T.
-type Subscription[T comparable] struct {
+type Subscription[T any] struct {
 	transport  Transport
 	encoder    Encoder
 	keyBuilder KeyBuilder[T]
@@ -30,7 +30,7 @@ type Subscription[T comparable] struct {
 }
 
 // NewSubscription creates a new subscription
-func NewSubscription[T comparable](transport Transport, encoder Encoder, kb KeyBuilder[T]) *Subscription[T] {
+func NewSubscription[T any](transport Transport, encoder Encoder, kb KeyBuilder[T]) *Subscription[T] {
 	return &Subscription[T]{transport: transport, encoder: encoder, keyBuilder: kb}
 }
 

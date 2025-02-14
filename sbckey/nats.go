@@ -23,7 +23,7 @@ var (
 //
 // Allowed characters Any ASCII character except null and .,* and >
 // Recommended characters: a to z, A to Z and 0 to 9 and - (names are case-sensitive, and cannot contain whitespace).
-func NatsDefaultKeyBuilder[T comparable]() sbc.KeyBuilder[T] {
+func NatsDefaultKeyBuilder[T any]() sbc.KeyBuilder[T] {
 	return sbc.KeyBuilderFunc[T](func(t T) string {
 		val := fmt.Sprintf("%T", t)
 		if natsKeyValid(val) {
