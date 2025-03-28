@@ -58,7 +58,7 @@ We welcome contributions from the community. If you wish to contribute, please f
 
 ## Project Diagram
 
-![diagram](doc/img/diagram.png)
+![Project Architecture Diagram](doc/img/diagram.png)
 
 ## License
 
