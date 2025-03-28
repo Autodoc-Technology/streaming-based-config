@@ -56,6 +56,10 @@ We welcome contributions from the community. If you wish to contribute, please f
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
+## Project Diagram
+
+![Project Architecture Diagram](doc/img/diagram.png)
+
 ## License
 
 This project is Apache 2.0 licensed. For more information, please refer to the `LICENSE` file.
